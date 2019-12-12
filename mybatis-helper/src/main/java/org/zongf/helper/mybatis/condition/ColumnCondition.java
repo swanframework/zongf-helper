@@ -21,8 +21,8 @@ public class ColumnCondition {
     // 值
     private Object value;
     
-    // 忽略大小写
-    private boolean ignoreCase;
+    // 大小写敏感
+    private boolean caseSensitive;
 
 	public ColumnCondition() {
         super();
@@ -36,13 +36,13 @@ public class ColumnCondition {
 		this.value = value;
     }
 
-    public ColumnCondition(RelationType relationType, String columnName, OperatorType operatorType, Object value, boolean ignoreCase) {
+    public ColumnCondition(RelationType relationType, String columnName, OperatorType operatorType, Object value, boolean caseSensitive) {
         super();
         this.relationType = relationType;
         this.columnName = columnName;
         this.operatorType = operatorType;
         this.value = value;
-        this.ignoreCase = ignoreCase;
+        this.caseSensitive = caseSensitive;
     }
 
     public void setRelationType(RelationType relationType){
@@ -77,16 +77,16 @@ public class ColumnCondition {
 		return this.value;
 	}
 
-    public void setIgnoreCase(boolean ignoreCase){
-		this.ignoreCase=ignoreCase;
+    public void setCaseSensitive(boolean caseSensitive){
+		this.caseSensitive = caseSensitive;
 	}
 
-	public boolean isIgnoreCase(){
-		return this.ignoreCase;
+	public boolean isCaseSensitive(){
+		return this.caseSensitive;
 	}
 
     public String toString() {
-		return getClass().getSimpleName() + "@" + hashCode() + ": {relationType:" + relationType + ", columnName:" + columnName + ", operatorType:" + operatorType + ", value:" + value + ", ignoreCase:" + ignoreCase  + "}";
+		return getClass().getSimpleName() + "@" + hashCode() + ": {relationType:" + relationType + ", columnName:" + columnName + ", operatorType:" + operatorType + ", value:" + value + ", ignoreCase:" + caseSensitive + "}";
 	}
 
 }
