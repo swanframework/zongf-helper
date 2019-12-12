@@ -8,9 +8,11 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * @author zongf
- * @date 2019-12-12
+ * @Description: 完全copyPageInfo, 只修改了total 赋值地方.
+ * @author: zongf
+ * @date: 2019-06-13
  */
+
 public class PageResult<T> extends ArrayList<T> {
 
     private static final long serialVersionUID = 1412759446332294208L;
@@ -247,20 +249,20 @@ public class PageResult<T> extends ArrayList<T> {
         this.nextPage = nextPage;
     }
 
-    public boolean isFirstPage() {
+    public boolean isIsFirstPage() {
         return isFirstPage;
     }
 
-    public void setFirstPage(boolean firstPage) {
-        isFirstPage = firstPage;
+    public void setIsFirstPage(boolean isFirstPage) {
+        this.isFirstPage = isFirstPage;
     }
 
-    public boolean isLastPage() {
+    public boolean isIsLastPage() {
         return isLastPage;
     }
 
-    public void setLastPage(boolean lastPage) {
-        isLastPage = lastPage;
+    public void setIsLastPage(boolean isLastPage) {
+        this.isLastPage = isLastPage;
     }
 
     public boolean isHasPreviousPage() {
@@ -299,12 +301,12 @@ public class PageResult<T> extends ArrayList<T> {
         return navigateFirstPage;
     }
 
-    public void setNavigateFirstPage(int navigateFirstPage) {
-        this.navigateFirstPage = navigateFirstPage;
-    }
-
     public int getNavigateLastPage() {
         return navigateLastPage;
+    }
+
+    public void setNavigateFirstPage(int navigateFirstPage) {
+        this.navigateFirstPage = navigateFirstPage;
     }
 
     public void setNavigateLastPage(int navigateLastPage) {
@@ -317,5 +319,38 @@ public class PageResult<T> extends ArrayList<T> {
 
     public void setTotal(long total) {
         this.total = total;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("PageResult{");
+        sb.append("pageNum=").append(pageNum);
+        sb.append(", pageSize=").append(pageSize);
+        sb.append(", size=").append(size);
+        sb.append(", startRow=").append(startRow);
+        sb.append(", endRow=").append(endRow);
+        sb.append(", total=").append(total);
+        sb.append(", pages=").append(pages);
+        sb.append(", prePage=").append(prePage);
+        sb.append(", nextPage=").append(nextPage);
+        sb.append(", isFirstPage=").append(isFirstPage);
+        sb.append(", isLastPage=").append(isLastPage);
+        sb.append(", hasPreviousPage=").append(hasPreviousPage);
+        sb.append(", hasNextPage=").append(hasNextPage);
+        sb.append(", navigatePages=").append(navigatePages);
+        sb.append(", navigateFirstPage=").append(navigateFirstPage);
+        sb.append(", navigateLastPage=").append(navigateLastPage);
+        sb.append(", navigatepageNums=");
+        if (navigatepageNums == null) {
+            sb.append("null");
+        } else {
+            sb.append('[');
+            for (int i = 0; i < navigatepageNums.length; ++i) {
+                sb.append(i == 0 ? "" : ", ").append(navigatepageNums[i]);
+            }
+            sb.append(']');
+        }
+        sb.append('}');
+        return sb.toString();
     }
 }

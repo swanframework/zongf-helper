@@ -1,8 +1,9 @@
 package org.zongf.helper.mybatis.pager;
 
 /**
- * @author zongf
- * @date 2019-12-12
+ * @Description: 页码
+ * @author: zongf
+ * @date: 2019-06-13
  */
 public class PageBounds {
 
