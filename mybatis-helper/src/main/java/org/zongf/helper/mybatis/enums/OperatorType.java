@@ -33,10 +33,10 @@ public enum OperatorType {
     /** in 查询*/
     in,
 
-    /** 模糊匹配: like %xx%/
+    /** 模糊匹配: like %xx% */
     like,
 
-     ** 以字符串开始: like xx% */
+    /** 以字符串开始: like xx% */
     startWith,
 
     /** 以字符串结束: like %xx*/
