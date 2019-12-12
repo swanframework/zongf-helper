@@ -7,55 +7,42 @@ package org.zongf.helper.mybatis.enums;
 public enum OperatorType {
 
     /** 等于 */
-    equals("="),
+    equals,
 
     /** 不等于 */
-    notEquals("!="),
+    notEquals,
 
     /** 大于 */
-    greaterThan(">"),
+    greaterhan,
 
     /** 小于 */
-    lessThan("<"),
-
-    /** 小于等于: <= */
-    notGreaterThan("<="),
+    lessThan,
 
     /** 大于等于: >= */
-    notLessThan(">="),
+    greaterOrEquals,
 
-    /** 忽略大小写等于 */
-    igCaseEquals("="),
-
-    /** 忽略大小写不等于: != */
-    igCaseNotEquals("!="),
+    /** 小于等于: <= */
+    lessOrEqualsThan,
 
     /** 为空 is null */
-    isNull("is null"),
+    isNull,
 
     /** 不为空 is not null */
-    isNotNull("is not null"),
+    isNotNull,
 
     /** in 查询*/
-    in("in"),
+    in,
 
-    /** like 模糊查询*/
-    like("like"),
+    /** 模糊匹配: like %xx%/
+    like,
 
-    /** 忽略大小写模糊匹配 */
-    igCaseLike("like");
+     ** 以字符串开始: like xx% */
+    startWith,
 
-    private String operator;
+    /** 以字符串结束: like %xx*/
+    endWith,
 
-    OperatorType(String operator) {
-        this.operator = operator;
-    }
-
-    public String getOperator() {
-        return operator;
-    }
-
-    public void setOperator(String operator) {
-        this.operator = operator;
-    }
+    /** 包含: instr(column, 'xxx') > 0 */
+    contains
+    ;
 }
