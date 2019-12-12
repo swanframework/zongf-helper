@@ -49,6 +49,21 @@ public class SingleQueryCondition {
         return this;
     }
 
+    public List<ColumnCondition> getConditions() {
+        return conditions;
+    }
+
+    public void setConditions(List<ColumnCondition> conditions) {
+        this.conditions = conditions;
+    }
+
+    public List<SortRule> getOrderRules() {
+        return orderRules;
+    }
+
+    public void setOrderRules(List<SortRule> orderRules) {
+        this.orderRules = orderRules;
+    }
 }
 
 
