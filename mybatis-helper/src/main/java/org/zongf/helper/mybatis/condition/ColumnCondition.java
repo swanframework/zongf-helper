@@ -7,13 +7,13 @@ import org.zongf.helper.mybatis.enums.RelationType;
  * @author zongf
  * @date 2019-12-11
  */
-public class ColumnCondition {
+public class ColumnCondition<T extends Enum> {
 
     // 关系类型
     private RelationType relationType;
 
     // 字段名称
-    private String columnName;
+    private T field;
 
     // 关系
     private OperatorType operatorType;
@@ -28,21 +28,12 @@ public class ColumnCondition {
         super();
     }
 
-	public ColumnCondition(RelationType relationType, String columnName, OperatorType operatorType, Object value) {
+	public ColumnCondition(RelationType relationType, T field, OperatorType operatorType, Object value) {
         super();
 		this.relationType = relationType;
-		this.columnName = columnName;
+		this.field = field;
 		this.operatorType = operatorType;
 		this.value = value;
-    }
-
-    public ColumnCondition(RelationType relationType, String columnName, OperatorType operatorType, Object value, boolean caseSensitive) {
-        super();
-        this.relationType = relationType;
-        this.columnName = columnName;
-        this.operatorType = operatorType;
-        this.value = value;
-        this.caseSensitive = caseSensitive;
     }
 
     public void setRelationType(RelationType relationType){
@@ -53,12 +44,12 @@ public class ColumnCondition {
 		return this.relationType;
 	}
 
-    public void setColumnName(String columnName){
-		this.columnName=columnName;
+    public void setField(T field){
+		this.field=field;
 	}
 
-	public String getColumnName(){
-		return this.columnName;
+	public T getField(){
+		return this.field;
 	}
 
     public void setOperatorType(OperatorType operatorType){
@@ -78,7 +69,7 @@ public class ColumnCondition {
 	}
 
     public void setCaseSensitive(boolean caseSensitive){
-		this.caseSensitive = caseSensitive;
+		this.caseSensitive=caseSensitive;
 	}
 
 	public boolean isCaseSensitive(){
@@ -86,7 +77,7 @@ public class ColumnCondition {
 	}
 
     public String toString() {
-		return getClass().getSimpleName() + "@" + hashCode() + ": {relationType:" + relationType + ", columnName:" + columnName + ", operatorType:" + operatorType + ", value:" + value + ", ignoreCase:" + caseSensitive + "}";
+		return getClass().getSimpleName() + "@" + hashCode() + ": {relationType:" + relationType + ", field:" + field + ", operatorType:" + operatorType + ", value:" + value + ", caseSensitive:" + caseSensitive  + "}";
 	}
 
 }

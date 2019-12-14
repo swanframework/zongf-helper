@@ -2,7 +2,7 @@ package org.zongf.helper.mybatis.condition;
 
 import java.util.List;
 
-/**
+/** 抽象条件类
  * @author zongf
  * @date 2019-12-12
  */

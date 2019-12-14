@@ -7,7 +7,7 @@ import org.zongf.helper.mybatis.enums.RelationType;
 
 import java.util.*;
 
-/**
+/** 更新条件构建器
  * @author zongf
  * @date 2019-12-13
  */
@@ -28,23 +28,23 @@ public class UpdateConditionBuilder<T extends Enum> {
         return this;
     }
 
-    public UpdateConditionBuilder<T> and(String columnName, OperatorType operatorType, Object value){
-        this.conditionList.add(new ColumnCondition(RelationType.AND, columnName, operatorType, value));
+    public UpdateConditionBuilder<T> and(T field, OperatorType operatorType, Object value){
+        this.conditionList.add(new ColumnCondition<T>(RelationType.AND, field, operatorType, value));
         return this;
     }
 
-    public UpdateConditionBuilder<T> and(String columnName, OperatorType operatorType, Object value, boolean caseSensitive){
-        this.conditionList.add(new ColumnCondition(RelationType.AND, columnName, operatorType, value, caseSensitive));
+    public UpdateConditionBuilder<T> and(T field, OperatorType operatorType, Object value, boolean caseSensitive){
+        this.conditionList.add(new ColumnCondition(RelationType.AND, field, operatorType, value));
         return this;
     }
 
-    public UpdateConditionBuilder<T> or(String columnName, OperatorType operatorType, Object value){
-        this.conditionList.add(new ColumnCondition(RelationType.OR, columnName, operatorType, value));
+    public UpdateConditionBuilder<T> or(T field, OperatorType operatorType, Object value){
+        this.conditionList.add(new ColumnCondition(RelationType.OR, field, operatorType, value));
         return this;
     }
 
-    public UpdateConditionBuilder<T> or(String columnName, OperatorType operatorType, Object value, boolean caseSensitive){
-        this.conditionList.add(new ColumnCondition(RelationType.OR, columnName, operatorType, value, caseSensitive));
+    public UpdateConditionBuilder<T> or(T field, OperatorType operatorType, Object value, boolean caseSensitive){
+        this.conditionList.add(new ColumnCondition(RelationType.OR, field, operatorType, value));
         return this;
     }
 

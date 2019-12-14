@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
+/** 查询条件构建器
  * @author zongf
  * @date 2019-12-13
  */
@@ -41,28 +41,28 @@ public class QueryConditionBuilder<T extends Enum> {
         return this;
     }
 
-    public QueryConditionBuilder<T> orderBy(String columnName, SortType sortType){
-        this.orderRules.add(new SortRule(columnName, sortType));
+    public QueryConditionBuilder<T> orderBy(T field,SortType sortType){
+        this.orderRules.add(new SortRule(field, sortType));
         return this;
     }
 
-    public QueryConditionBuilder<T> and(String columnName, OperatorType operatorType, Object value){
-        this.conditionList.add(new ColumnCondition(RelationType.AND, columnName, operatorType, value));
+    public QueryConditionBuilder<T> and(T field,OperatorType operatorType, Object value){
+        this.conditionList.add(new ColumnCondition<T>(RelationType.AND, field, operatorType, value));
         return this;
     }
 
-    public QueryConditionBuilder<T> and(String columnName, OperatorType operatorType, Object value, boolean caseSensitive){
-        this.conditionList.add(new ColumnCondition(RelationType.AND, columnName, operatorType, value, caseSensitive));
+    public QueryConditionBuilder<T> and(T field,OperatorType operatorType, Object value, boolean caseSensitive){
+        this.conditionList.add(new ColumnCondition(RelationType.AND, field, operatorType, value));
         return this;
     }
 
-    public QueryConditionBuilder<T> or(String columnName, OperatorType operatorType, Object value){
-        this.conditionList.add(new ColumnCondition(RelationType.OR, columnName, operatorType, value));
+    public QueryConditionBuilder<T> or(T field,OperatorType operatorType, Object value){
+        this.conditionList.add(new ColumnCondition(RelationType.OR, field, operatorType, value));
         return this;
     }
 
-    public QueryConditionBuilder<T> or(String columnName, OperatorType operatorType, Object value, boolean caseSensitive){
-        this.conditionList.add(new ColumnCondition(RelationType.OR, columnName, operatorType, value, caseSensitive));
+    public QueryConditionBuilder<T> or(T field,OperatorType operatorType, Object value, boolean caseSensitive){
+        this.conditionList.add(new ColumnCondition(RelationType.OR, field, operatorType, value));
         return this;
     }
 

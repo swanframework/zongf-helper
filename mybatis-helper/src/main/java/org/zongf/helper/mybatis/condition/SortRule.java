@@ -6,42 +6,42 @@ import org.zongf.helper.mybatis.enums.SortType;
  * @author: zongf
  * @date: 2019-12-04
  */
-public class SortRule {
+public class SortRule<T extends Enum> {
 
     // 排序字段名称
-    private String columnName;
+    private T field;
 
     // 排序类型
     private SortType sortType;
 
-    public SortRule() {
+	public SortRule() {
         super();
     }
 
-    public SortRule(String columnName, SortType sortType) {
+	public SortRule(T field, SortType sortType) {
         super();
-        this.columnName = columnName;
-        this.sortType = sortType;
+		this.field = field;
+		this.sortType = sortType;
     }
 
-    public void setColumnName(String columnName){
-        this.columnName=columnName;
-    }
+    public void setField(T field){
+		this.field=field;
+	}
 
-    public String getColumnName(){
-        return this.columnName;
-    }
+	public T getField(){
+		return this.field;
+	}
 
     public void setSortType(SortType sortType){
-        this.sortType=sortType;
-    }
+		this.sortType=sortType;
+	}
 
-    public SortType getSortType(){
-        return this.sortType;
-    }
+	public SortType getSortType(){
+		return this.sortType;
+	}
 
     public String toString() {
-        return getClass().getSimpleName() + "@" + hashCode() + ": {columnName:" + columnName + ", sortType:" + sortType  + "}";
-    }
+		return getClass().getSimpleName() + "@" + hashCode() + ": {field:" + field + ", sortType:" + sortType  + "}";
+	}
 
 }

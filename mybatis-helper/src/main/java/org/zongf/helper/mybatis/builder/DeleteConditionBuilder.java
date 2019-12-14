@@ -8,7 +8,7 @@ import org.zongf.helper.mybatis.enums.RelationType;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/** 删除条件构建器
  * @author zongf
  * @date 2019-12-13
  */
@@ -20,23 +20,23 @@ public class DeleteConditionBuilder<T extends Enum> {
         this.conditionList = new ArrayList<>();
     }
 
-    public DeleteConditionBuilder<T> and(String columnName, OperatorType operatorType, Object value){
-        this.conditionList.add(new ColumnCondition(RelationType.AND, columnName, operatorType, value));
+    public DeleteConditionBuilder<T> and(T field, OperatorType operatorType, Object value){
+        this.conditionList.add(new ColumnCondition<T>(RelationType.AND, field, operatorType, value));
         return this;
     }
 
-    public DeleteConditionBuilder<T> and(String columnName, OperatorType operatorType, Object value, boolean caseSensitive){
-        this.conditionList.add(new ColumnCondition(RelationType.AND, columnName, operatorType, value, caseSensitive));
+    public DeleteConditionBuilder<T> and(T field, OperatorType operatorType, Object value, boolean caseSensitive){
+        this.conditionList.add(new ColumnCondition(RelationType.AND, field, operatorType, value));
         return this;
     }
 
-    public DeleteConditionBuilder<T> or(String columnName, OperatorType operatorType, Object value){
-        this.conditionList.add(new ColumnCondition(RelationType.OR, columnName, operatorType, value));
+    public DeleteConditionBuilder<T> or(T field, OperatorType operatorType, Object value){
+        this.conditionList.add(new ColumnCondition(RelationType.OR, field, operatorType, value));
         return this;
     }
 
-    public DeleteConditionBuilder<T> or(String columnName, OperatorType operatorType, Object value, boolean caseSensitive){
-        this.conditionList.add(new ColumnCondition(RelationType.OR, columnName, operatorType, value, caseSensitive));
+    public DeleteConditionBuilder<T> or(T field, OperatorType operatorType, Object value, boolean caseSensitive){
+        this.conditionList.add(new ColumnCondition(RelationType.OR, field, operatorType, value));
         return this;
     }
 
