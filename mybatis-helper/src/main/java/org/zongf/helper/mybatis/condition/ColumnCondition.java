@@ -76,8 +76,4 @@ public class ColumnCondition<T extends Enum> {
 		return this.caseSensitive;
 	}
 
-    public String toString() {
-		return getClass().getSimpleName() + "@" + hashCode() + ": {relationType:" + relationType + ", field:" + field + ", operatorType:" + operatorType + ", value:" + value + ", caseSensitive:" + caseSensitive  + "}";
-	}
-
 }

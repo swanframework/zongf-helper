@@ -6,7 +6,7 @@ import java.util.List;
  * @author zongf
  * @date 2019-12-12
  */
-public abstract class AbsCondition {
+public abstract class AbsStrategy {
 
     // 条件列表
     private List<ColumnCondition> conditions;

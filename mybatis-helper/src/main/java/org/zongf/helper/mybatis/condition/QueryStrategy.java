@@ -6,7 +6,7 @@ import java.util.List;
  * @author: zongf
  * @date: 2019-12-02
  */
-public class QueryCondition<T extends Enum> extends UpdateCondition {
+public class QueryStrategy<T extends Enum> extends UpdateStrategy {
 
     // 是否去重
     private boolean distinct;
@@ -15,7 +15,7 @@ public class QueryCondition<T extends Enum> extends UpdateCondition {
     private List<T> fields;
 
     // 排序规则
-    private List<SortRule> orderRules;
+    private List<OrderRule> orderRules;
 
     public boolean isDistinct() {
         return distinct;
@@ -33,11 +33,11 @@ public class QueryCondition<T extends Enum> extends UpdateCondition {
         this.fields = fields;
     }
 
-    public List<SortRule> getOrderRules() {
+    public List<OrderRule> getOrderRules() {
         return orderRules;
     }
 
-    public void setOrderRules(List<SortRule> orderRules) {
+    public void setOrderRules(List<OrderRule> orderRules) {
         this.orderRules = orderRules;
     }
 }

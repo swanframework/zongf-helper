@@ -6,8 +6,8 @@ package org.zongf.helper.mybatis.enums;
  */
 public enum RelationType{
     /** 逻辑与 */
-    AND,
+    and,
 
     /** 逻辑或 */
-    OR;
+    or;
 }

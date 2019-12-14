@@ -4,6 +4,11 @@ package org.zongf.helper.mybatis.enums;
  * @author: zongf
  * @date: 2019-12-04
  */
-public enum SortType {
-    DESC, ASC;
+public enum OrderType {
+
+    /** 降序 */
+    desc,
+
+    /** 升序 */
+    asc;
 }

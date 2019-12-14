@@ -4,5 +4,5 @@ package org.zongf.helper.mybatis.condition;
  * @author zongf
  * @date 2019-12-12
  */
-public class DeleteCondition<T extends Enum> extends AbsCondition {
+public class DeleteStrategy<T extends Enum> extends AbsStrategy {
 }

@@ -1,24 +1,24 @@
 package org.zongf.helper.mybatis.condition;
 
-import org.zongf.helper.mybatis.enums.SortType;
+import org.zongf.helper.mybatis.enums.OrderType;
 
 /** 排序规则
  * @author: zongf
  * @date: 2019-12-04
  */
-public class SortRule<T extends Enum> {
+public class OrderRule<T extends Enum> {
 
     // 排序字段名称
     private T field;
 
     // 排序类型
-    private SortType sortType;
+    private OrderType sortType;
 
-	public SortRule() {
+	public OrderRule() {
         super();
     }
 
-	public SortRule(T field, SortType sortType) {
+	public OrderRule(T field, OrderType sortType) {
         super();
 		this.field = field;
 		this.sortType = sortType;
@@ -32,11 +32,11 @@ public class SortRule<T extends Enum> {
 		return this.field;
 	}
 
-    public void setSortType(SortType sortType){
+    public void setSortType(OrderType sortType){
 		this.sortType=sortType;
 	}
 
-	public SortType getSortType(){
+	public OrderType getSortType(){
 		return this.sortType;
 	}
 

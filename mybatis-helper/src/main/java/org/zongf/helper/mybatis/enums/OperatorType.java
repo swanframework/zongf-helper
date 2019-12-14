@@ -43,6 +43,5 @@ public enum OperatorType {
     endWith,
 
     /** 包含: instr(column, 'xxx') > 0 */
-    contains
-    ;
+    contains;
 }
